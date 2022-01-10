@@ -1,4 +1,3 @@
-# Team 99 Group Project
 
 ### Focus Area
 
