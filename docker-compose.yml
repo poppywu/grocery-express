@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  springapp:
+    build: ./backend
+    restart: on-failure
+    ports:
+      - 8000:8000
+    depends_on:
+      - mysql
+    command: ./mvnw spring-boot:run
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=grocery_store
